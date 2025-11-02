@@ -319,7 +319,7 @@ enterprise-finance-migration-accelerator/
 
 ### Microsoft Fabric Resources
 - [Open Mirroring Documentation](https://learn.microsoft.com/en-us/fabric/database/mirrored-database/overview)
-- [SQL Analytics Endpoint](https://learn.microsoft.com/en-us/fabric/data-warehouse/sql-analytics-endpoint-overview)
+- [SQL Analytics Endpoint](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-sql-analytics-endpoint)
 - [Direct Lake Mode](https://learn.microsoft.com/en-us/power-bi/enterprise/directlake-overview)
 
 ### Video Walkthrough
