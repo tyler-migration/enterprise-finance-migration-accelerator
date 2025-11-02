@@ -1001,8 +1001,6 @@ Annual:  $150,000 - $9,270 = $140,730 (93.8% reduction)
 3-Year:  $472,881 - $27,810 = $445,071 (94.1% reduction)
 ```
 
-**See:** [TCO_ANALYSIS.md](TCO_ANALYSIS.md) for complete financial model
-
 ---
 
 ### Cost Optimization Strategies
