@@ -102,11 +102,12 @@ SELECT COUNT(*) FROM [Snowflake_Enterprise_Finance].[FINANCE_DW].[GL_TRANSACTION
 ### Automated RBAC Synchronization
 
 ![RBAC Mapping Diagram - Placeholder](assets/rbac-mapping.png)
+
 *Intelligent role mapping preserves security boundaries across platforms*
 
 **The Challenge:** Snowflake has 100+ role-based grants. Fabric uses workspace-level permissions. Manually mapping = 40+ hours of error-prone work.
 
-**Our Solution:** Automated mapping script that:
+**My Solution:** Automated mapping script that:
 - ✅ Exports all Snowflake `SHOW GRANTS` for selected roles
 - ✅ Translates to Fabric equivalents (Admin, Member, Contributor, Viewer)
 - ✅ Applies permissions via Fabric REST API or Power Automate
