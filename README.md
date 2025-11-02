@@ -298,7 +298,6 @@ python scripts/rbac_sync.py --source snowflake --target fabric --dry-run
 | **Storage Format** | Delta Lake (OneLake) |
 | **Query Engine** | SQL Analytics Endpoint (T-SQL) |
 | **Automation** | Python 3.12, Fabric Notebooks, Power Automate |
-| **Visualization** | Power BI (Direct Lake mode) |
 | **Dataset** | 6 finance tables, 45.5M rows, 1.88 GB |
 
 ---
