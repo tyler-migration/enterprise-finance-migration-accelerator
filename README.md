@@ -238,7 +238,6 @@ cd enterprise-finance-migration-accelerator
 
 ### Step 2: Generate Finance Data in Snowflake
 ```bash
-pip install -r requirements.txt
 python scripts/generate_snowflake_data.py
 # Creates 6 tables with 45.5M rows in ~15 minutes
 ```
@@ -264,8 +263,8 @@ FROM [Snowflake_Enterprise_Finance].[FINANCE_DW].[GL_TRANSACTIONS];
 
 ### Step 5: Run RBAC Sync (Optional)
 ```bash
-python scripts/rbac_sync.py --source snowflake --target fabric --dry-run
-# Review mapping, then run without --dry-run to apply
+python scripts/rbac_sync_atuomation.py
+# Edit .env first with your Snowflake and Fabric credentials
 ```
 
 **For detailed setup instructions, see [Migration Playbook](docs/MIGRATION_PLAYBOOK.md)**
