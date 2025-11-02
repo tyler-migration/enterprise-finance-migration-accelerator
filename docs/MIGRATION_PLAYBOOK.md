@@ -1,10 +1,15 @@
 # Enterprise Finance Migration Playbook
+
 ## Zero-Downtime Snowflake to Microsoft Fabric Migration Using Open Mirroring
 
 **Version:** 1.0
+
 **Last Updated:** October 27, 2025
+
 **Author:** Tyler Rabiger
+
 **Project:** FabCon Global Hack 2025 - Enterprise Finance Migration Accelerator
+
 **Estimated Time:** 4-6 hours for complete setup
 ---
 
