@@ -1853,7 +1853,7 @@ GROUP BY FISCAL_YEAR, FISCAL_PERIOD, ACCOUNT_TYPE;
 
 - **Fabric Mirroring:** https://learn.microsoft.com/fabric/database/mirrored-database/overview
 - **Snowflake Connector:** https://learn.microsoft.com/fabric/database/mirrored-database/snowflake
-- **SQL Analytics Endpoint:** https://learn.microsoft.com/fabric/data-warehouse/sql-analytics-endpoint
+- **SQL Analytics Endpoint:** https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-sql-analytics-endpoint
 - **Direct Lake:** https://learn.microsoft.com/power-bi/enterprise/directlake-overview
 - **Fabric Pricing:** https://azure.microsoft.com/pricing/details/microsoft-fabric/
 
