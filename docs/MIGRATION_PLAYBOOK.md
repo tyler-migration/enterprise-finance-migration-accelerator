@@ -276,12 +276,12 @@ SHOW WAREHOUSES LIKE 'COMPUTE_WH';
 
 ```bash
 # Clone the project repository
-git clone https://github.com/YOUR_USERNAME/enterprise-finance-migration-accelerator.git
+git clone https://github.com/tyler-migration/enterprise-finance-migration-accelerator.git
 cd enterprise-finance-migration-accelerator
 
 # Verify files
 ls -la
-# Should see: data/, docs/, automation/, README.md
+# Should see: assets/, docs/, scripts/, validation/, README.md
 ```
 
 ### Step 2.2: Install Python Dependencies
@@ -291,9 +291,16 @@ ls -la
 python3 -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-# Install dependencies
-cd data/
-pip install -r requirements.txt
+#Create requirements.txt file
+# Snowflake connector with pandas support
+snowflake-connector-python>=4.0.0,<5.0.0
+
+# Environment variable management
+python-dotenv>=1.2.0,<2.0.0
+
+# Data manipulation (required by snowflake.connector.pandas_tools)
+pandas>=2.0.0,<3.0.0
+
 
 # Verify installation
 python -c "import snowflake.connector; print('✓ Snowflake connector ready')"
@@ -304,11 +311,16 @@ python -c "import faker; print('✓ Faker ready')"
 ### Step 2.3: Configure Connection
 
 ```bash
-# Copy example environment file
-cp config.example.env .env
-
 # Edit .env with your Snowflake credentials
 nano .env  # or vim, code, etc.
+
+SNOWFLAKE_USER=
+SNOWFLAKE_PASSWORD=
+SNOWFLAKE_ACCOUNT=
+SNOWFLAKE_WAREHOUSE=
+SNOWFLAKE_DATABASE=
+SNOWFLAKE_SCHEMA=
+SNOWFLAKE_ROLE=
 ```
 
 **Populate .env with your details from Step 1.1**
