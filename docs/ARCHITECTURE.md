@@ -1034,56 +1034,9 @@ if time.hour == 8 and time.weekday() < 5:
 - Archive tier: Historical data (>2 years) – 50% discount
 - Implement data lifecycle policy (automatic archiving)
 
----
 
-## Migration Architecture
 
-### Migration Phases
-
-**Phase 1: Preparation (Week 1)**
-- Generate sample finance data (Python)
-- Load to Snowflake (45.5M rows)
-- Validate source data quality
-
-**Phase 2: Mirroring Setup (Week 2)**
-- Provision Fabric F2 capacity
-- Configure Mirroring connection
-- Run initial snapshot (60 seconds)
-- Validate 100% fidelity (row counts, schema, business logic)
-
-**Phase 3: Governance Migration (Week 3-4)**
-- Export Snowflake RBAC (5 roles, 64 grants)
-- Build mapping logic (Snowflake → Fabric)
-- Develop Power Automate flow (REST API automation)
-- Test RBAC sync end-to-end
-
-**Phase 4: Validation Framework (Week 4)**
-- Build Fabric Notebook (42 automated checks)
-- Create validation dashboard (Power BI)
-- Schedule daily validation runs
-- Test incremental sync + validation
-
-**Phase 5: Business Case (Week 5)**
-- Develop TCO calculator (interactive Power BI)
-- Benchmark query performance (Snowflake vs Fabric)
-- Create finance reports (P&L, budget variance, vendor analysis)
-- Document cost savings (93.8%)
-
-**Phase 6: Documentation (Week 6)**
-- Write migration playbook (step-by-step guide)
-- Create architecture diagrams (this document)
-- Document limitations and workarounds
-- Prepare GitHub repository
-
-**Phase 7: Submission (Week 7)**
-- Record 2-3 minute demo video
-- Polish GitHub repository
-- Submit to Devpost (November 15 deadline)
-- Final testing and validation
-
----
-
-### Cutover Strategy (Production)
+### Migration Strategy (Production)
 
 **Zero-Downtime Approach:**
 
@@ -1151,7 +1104,7 @@ Day 45:    Decommission Snowflake
 | Monthly spend >$100 | Low | Email finance team (budget alert) |
 
 **Alert Channels:**
-- Email: tyler@rabiger.com
+- Email: Work email
 - Microsoft Teams: #fabcon-alerts (channel)
 - Dashboard: Red indicator on monitoring page
 
@@ -1220,22 +1173,6 @@ Day 45:    Decommission Snowflake
 ═══►   = High-throughput data flow (initial snapshot)
 - - ►  = Asynchronous/batch flow (scheduled jobs)
 ```
-
----
-
-## Summary
-
-This architecture delivers a **production-ready, zero-downtime migration** from Snowflake to Microsoft Fabric using Open Mirroring. Key achievements:
-
-✅ **60-second initial snapshot** (45.5M rows, 1.88 GB) 
-✅ **<5 minute incremental sync** (continuous CDC) 
-✅ **100% data fidelity** (42 automated validations) 
-✅ **Automated RBAC migration** (5 roles, 64 grants) 
-✅ **93.8% cost reduction** ($150K → $9K annually) 
-✅ **10x query performance** (Direct Lake vs ETL) 
-✅ **Production-ready** (monitoring, alerting, comprehensive docs)
-
-**For Judges:** This is not a toy demo—it's an **enterprise-grade reference architecture** that solves real migration challenges (downtime, security, validation) and proves compelling business value ($445K saved over 3 years).
 
 ---
 
