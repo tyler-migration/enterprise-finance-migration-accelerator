@@ -4,7 +4,7 @@
 [![Microsoft Fabric](https://img.shields.io/badge/Microsoft_Fabric-Open_Mirroring-0078D4?style=for-the-badge&logo=microsoft)](https://fabric.microsoft.com)
 [![Snowflake](https://img.shields.io/badge/Snowflake-Source-29B5E8?style=for-the-badge&logo=snowflake&logoColor=white)](https://www.snowflake.com)
 [![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square)](LICENSE)
+[![License](https://img.shields.io/badge/License-Apache%202.0-D22128?style=for-the-badge&logo=apache&logoColor=white)](LICENSE)
 ---
 
 ## Migration at a Glance
