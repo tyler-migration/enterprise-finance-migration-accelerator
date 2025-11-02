@@ -287,24 +287,26 @@ Using Claude accelerated development by ~60%, allowing focus on:
 ## Repository Structure
 ```
 enterprise-finance-migration-accelerator/
-├── README.md                          # You are here
+├── README.md                               # You are here
 ├── docs/
-│   ├── MIGRATION_PLAYBOOK.md          # Detailed setup guide
-│   └── ARCHITECTURE.md                # Technical deep dive
+│   ├── MIGRATION_PLAYBOOK.md               # Detailed setup guide
+│   └── ARCHITECTURE.md                     # Technical deep dive
 ├── scripts/
-│   ├── generate_snowflake_data.py     # Creates sample finance data
-│   ├── rbac_sync.py                   # Automates permission mapping
-│   └── data_generators.py             # Realistic data generation logic
+|   ├── RBAC_Sync_Flow_20251026215400.zip   # PowerAutomate flow export
+|   ├── config.env.template                 # Configuration template
+│   ├── generate_snowflake_data.py          # Creates sample finance data
+│   ├── rbac_sync_automation.py             # Automates permission mapping
+│   └── requirements_rbac.txt               # RBAC Python dependencies
 ├── validation/
-│   ├── validation_queries.sql         # 8-check test suite
-│   └── validation_notebook.ipynb      # Fabric Notebook for automation
+│   ├── validation_queries.sql              # 8-check test suite
+│   └── validation_notebook.ipynb           # Fabric Notebook for automation
 ├── assets/
-│   ├── architecture-diagram.png       # Infrastructure overview
-│   ├── rbac-mapping.png               # Security translation visual
-│   ├── validation-dashboard.png       # Pass/fail monitoring
-│   └── tco-calculator.png             # Cost comparison tool
-├── requirements.txt                   # Python dependencies
-└── LICENSE                            # MIT License
+│   ├── architecture-diagram.png            # Infrastructure overview
+│   ├── rbac-mapping.png                    # Security translation visual
+│   ├── validation-dashboard.png            # Pass/fail monitoring
+│   └── tco-calculator.png                  # Cost comparison tool
+├── requirements.txt                        # Python dependencies
+└── LICENSE                                 # Apache 2.0 License
 ```
 
 ---
