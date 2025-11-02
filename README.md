@@ -162,7 +162,7 @@ snowflake_role_mapping = {
 | **Licensing** | $10,000 | $6,000 | **$4,000** |
 | **Total** | **$82,700** | **$31,750** | **$50,950 (62%)** |
 
-> **Assumptions:** Snowflake Medium/Large warehouse (12 hrs/day, Enterprise edition), Fabric F32 capacity (50% uptime), Power BI Pro for 50 users. See [detailed TCO analysis](docs/TCO_ANALYSIS.md) for conservative and aggressive scenarios (48-89% savings range).
+> **Assumptions:** Snowflake Medium/Large warehouse (12 hrs/day, Enterprise edition), Fabric F32 capacity (50% uptime), Power BI Pro for 50 users.
 
 **Cost Sensitivity:**
 - **Key variables:** Query workload intensity, capacity utilization %, warehouse size optimization
