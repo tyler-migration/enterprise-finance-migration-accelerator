@@ -361,7 +361,6 @@ enterprise-finance-migration-accelerator/
 
 **Project-Specific Constraints:**
 - Dataset limited to 6 finance tables (representative subset)
-- Snowflake trial expires ~Nov 3, 2025 (screenshots/cached data for demo)
 - F2 capacity used ($0.36/hour) - optimized for cost
 
 **Production Recommendations:**
@@ -374,7 +373,7 @@ enterprise-finance-migration-accelerator/
 
 ## License
 
-This project is licensed under the **MIT License** - see [LICENSE](LICENSE) for details.
+This project is licensed under the **Apache License 2.0** - see [LICENSE](LICENSE) for details.
 
 **Attribution:** Built by Tyler Rabiger | [GitHub](#)
 
