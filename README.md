@@ -142,7 +142,7 @@ snowflake_role_mapping = {
 
 ---
 
-### 93.8% Cost Reduction with Transparent TCO
+### 90%+ Cost Reduction with Transparent TCO
 
 ![TCO Calculator - Placeholder](assets/tco-calculator.png)
 *3-year cost projection with sensitivity analysis*
@@ -301,7 +301,7 @@ enterprise-finance-migration-accelerator/
 │   ├── validation_queries.sql              # 8-check test suite
 │   └── validation_notebook.ipynb           # Fabric Notebook for automation
 ├── assets/
-│   ├── architecture-diagram.png            # Infrastructure overview
+│   ├── architecture-diagram.svg            # Infrastructure overview
 │   ├── rbac-mapping.png                    # Security translation visual
 │   ├── validation-dashboard.png            # Pass/fail monitoring
 │   └── tco-calculator.png                  # Cost comparison tool
