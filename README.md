@@ -51,7 +51,7 @@ Enterprises spend **$120-150K annually** on Snowflake but face three critical ch
 
 ### Architecture Overview
 
-![Architecture Diagram - Placeholder](assets/architecture-diagram.png)
+![Architecture Diagram - Placeholder](assets/architecture-diagram.svg)
 *Complete end-to-end migration flow from Snowflake to Fabric with automated governance*
 
 <details>
