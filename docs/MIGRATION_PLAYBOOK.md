@@ -1893,7 +1893,7 @@ GROUP BY FISCAL_YEAR, FISCAL_PERIOD, ACCOUNT_TYPE;
 
 ## License
 
-This playbook is released under the MIT License. See [LICENSE](../LICENSE) file for details.
+This playbook is released under Apache License 2.0. See [LICENSE](../LICENSE) file for details.
 
 ---
 
