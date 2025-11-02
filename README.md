@@ -353,7 +353,6 @@ enterprise-finance-migration-accelerator/
 │   ├── rbac-mapping.png                    # Security translation visual
 │   ├── validation-dashboard.png            # Pass/fail monitoring
 │   └── tco-calculator.png                  # Cost comparison tool
-├── requirements.txt                        # Python dependencies
 └── LICENSE                                 # Apache 2.0 License
 ```
 
