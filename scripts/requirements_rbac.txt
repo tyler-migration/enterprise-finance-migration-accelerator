@@ -1,0 +1,17 @@
+# FabCon Global Hack 2025 - RBAC Sync Dependencies
+# Install with: pip install -r requirements_rbac.txt
+
+# Snowflake connector
+snowflake-connector-python==3.12.0
+
+# HTTP requests for Fabric API
+requests==2.31.0
+
+# Data manipulation and export
+pandas==2.2.0
+
+# Environment variable management
+python-dotenv==1.0.0
+
+# Optional: Enhanced logging
+colorlog==6.8.2
