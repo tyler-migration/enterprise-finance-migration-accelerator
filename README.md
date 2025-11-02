@@ -268,7 +268,7 @@ This project demonstrates **human-AI collaboration** in enterprise data engineer
 - ✅ **Platform Configuration:** Set up Snowflake + Fabric, configured mirroring, validated replication
 - ✅ **Testing & Validation:** Executed all validation queries, verified 100% data fidelity
 - ✅ **Business Analysis:** Created TCO model, quantified ROI, developed CFO narrative
-- ✅ **Integration:** Connected all components (Snowflake → Fabric → Power BI → validation)
+- ✅ **Integration:** Connected all components (Snowflake → Fabric → PowerAutomate → validation)
 - ✅ **Problem-Solving:** Debugged issues, optimized performance, handled edge cases
 
 ### AI as a Productivity Multiplier
@@ -384,6 +384,6 @@ This project is licensed under the **Apache License 2.0** - see [LICENSE](LICENS
 
 ---
 
-## 💬 Questions?
+## Questions?
 
 - **GitHub Issues:** [Open an issue](https://github.com/yourusername/enterprise-finance-migration-accelerator/issues)
