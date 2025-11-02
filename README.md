@@ -1,6 +1,6 @@
 # Enterprise Finance Migration Accelerator
 ### Zero-Downtime Snowflake → Microsoft Fabric with Automated Governance
-
+[![FabCon 2025](https://img.shields.io/badge/FabCon-2025-blue)](https://fabricconf.com/)
 [![Microsoft Fabric](https://img.shields.io/badge/Microsoft_Fabric-Open_Mirroring-0078D4?style=for-the-badge&logo=microsoft)](https://fabric.microsoft.com)
 [![Snowflake](https://img.shields.io/badge/Snowflake-Source-29B5E8?style=for-the-badge&logo=snowflake&logoColor=white)](https://www.snowflake.com)
 [![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
