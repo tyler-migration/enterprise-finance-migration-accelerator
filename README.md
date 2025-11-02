@@ -85,7 +85,7 @@ Enterprises spend **$120-150K annually** on Snowflake but face three critical ch
 
 ### 60-Second Initial Migration
 
-![Row Count Validation - Placeholder](assets/row-count-validation.png)
+![Row Count Validation - Placeholder](assets/validation-dashboard.png)
 *Side-by-side proof: 45.5M rows in Snowflake = 45.5M rows in Fabric*
 ```sql
 -- Snowflake Source
@@ -129,9 +129,6 @@ snowflake_role_mapping = {
 
 ### Continuous Validation & Monitoring
 
-![Validation Dashboard - Placeholder](assets/validation-dashboard.png)
-*Real-time pass/fail monitoring across 8 validation dimensions*
-
 **Validation Framework:**
 | Check Type | Description | Status |
 |------------|-------------|--------|
@@ -143,8 +140,6 @@ snowflake_role_mapping = {
 | **Null Handling** | Null distribution identical | ✅ PASS |
 | **Date Ranges** | Min/max dates consistent | ✅ PASS |
 | **Sync Latency** | Incremental updates <5 minutes | ✅ PASS |
-
-**Automated Fabric Notebook** runs after each sync and publishes results to Power BI dashboard.
 
 ---
 
