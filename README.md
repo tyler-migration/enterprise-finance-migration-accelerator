@@ -100,29 +100,77 @@ SELECT COUNT(*) FROM [Snowflake_Enterprise_Finance].[FINANCE_DW].[GL_TRANSACTION
 
 ### Automated RBAC Synchronization
 
+**The Challenge:** Microsoft's Documentation States: "Granular security must be reconfigured in Fabric" after Mirroring setup.
+
+Snowflake has 64+ distinct role-based grants across my 5 finance roles. Fabric uses workspace-level permissions (Admin/Member/Contributor/Viewer). Manual migration means:
+- Analyzing 64 individual grants across 6 tables
+- Translating 4-privlege model to 4-tier permissions
+- Risk of misconfiguration
+- 40+ hours of error-prone manual work
+
+**My Solution: Flexible Deployment options**
+I built two automated implementations targeting different enterprise roles:
+
+**Option 1: Power Automate Flow**
+**For: Business Users and Citizen Developers**
 ![RBAC Mapping Diagram - Placeholder](assets/rbac-mapping.png)
 
-*Intelligent role mapping preserves security boundaries across platforms*
+**Features:**
+- Visual workflow for compliance auditing
+- No coding required
+- IT governance via Power Platform
+- Reads RBAC export CSVs
+- Calls Fabric REST API to sync permissions
 
-**The Challenge:** Snowflake has 100+ role-based grants. Fabric uses workspace-level permissions. Manually mapping = 40+ hours of error-prone work.
+**Deployment:**
+```
+Import → Configure → Schedule → Monitor
+15 minutes to production
+```
+**Option 2: Python Automation**
+**For: Data Engineers & DevOps Teams**
 
-**My Solution:** Automated mapping script that:
-- ✅ Exports all Snowflake `SHOW GRANTS` for selected roles
-- ✅ Translates to Fabric equivalents (Admin, Member, Contributor, Viewer)
-- ✅ Applies permissions via Fabric REST API or Power Automate
-- ✅ Validates inheritance and documents exceptions
 ```python
-# Example: Mapping Snowflake ACCOUNTADMIN → Fabric Workspace Admin
-snowflake_role_mapping = {
-    "ACCOUNTADMIN": "Admin",
-    "SYSADMIN": "Member", 
-    "DATA_ANALYST": "Contributor",
-    "REPORTING_VIEWER": "Viewer"
-}
-# [Full script in /scripts/rbac_sync.py]
+# Enterprise-grade automation
+from rbac_sync_automation import RBACMigrationOrchestrator
+
+orchestrator = RBACMigrationOrchestrator(config)
+
+# Exports 64 grants from 5 roles
+orchestrator.run_export()
+
+# Maps to Fabric 4-tier model  
+orchestrator.run_mapping()
+
+# Syncs via REST API with logging
+orchestrator.run_sync()
+
+# ✅ 5/5 permissions synced
+# ⏱️ 20 seconds execution time
 ```
 
-**Impact:** What took 40 hours of manual work now takes 10 minutes of automated execution.
+**Intelligent Role Mapping Logic:**
+| Snowflake Role | Grants | Fabric Permission | Reasoning |
+|----------------|--------|-------------------|-----------|
+| **FINANCE_ADMIN** | 30 grants (full CRUD on all 6 tables) | Admin | Full workspace control + permission management |
+| **FINANCE_ANALYST** | 9 grants (SELECT on 5 tables) | Member | Create reports, no permission mgmt |
+| **AP_MANAGER** | 11 grants (INSERT/UPDATE on INVOICES, VENDORS) | Contributor | AP workflows, limited scope |
+| **BUDGET_ANALYST** | 9 grants (INSERT/UPDATE on BUDGET_ACTUAL) | Contributor | Budget planning, limited scope |
+| **FINANCE_VIEWER** | 5 grants (SELECT on 2 tables) | Viewer | Read-only dashboards |
+
+**Implementation Output**
+```bash
+✅ finance_admin_grants.csv            # 30 Snowflake grants exported
+✅ finance_analyst_grants.csv          # 9 grants  
+✅ finance_viewer_grants.csv           # 5 grants
+✅ ap_manager_grants.csv               # 11 grants
+✅ budget_analyst_grants.csv           # 9 grants
+✅ snowflake_fabric_role_mapping.csv   # Complete mapping with reasoning
+✅ execution_log.txt                   # Detailed audit trail
+✅ migration_report.txt                # Executive summary
+```
+
+**Result:** 5 roles with 64 total grants migrated and validated. Complete audit trail for compliance teams.
 
 ---
 
