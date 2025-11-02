@@ -109,6 +109,7 @@ Snowflake has 64+ distinct role-based grants across my 5 finance roles. Fabric u
 - 40+ hours of error-prone manual work
 
 **My Solution: Flexible Deployment options**
+
 I built two automated implementations targeting different enterprise roles:
 
 **Option 1: Power Automate Flow**
@@ -128,6 +129,7 @@ Import → Configure → Schedule → Monitor
 15 minutes to production
 ```
 **Option 2: Python Automation**
+
 **For: Data Engineers & DevOps Teams**
 
 ```python
