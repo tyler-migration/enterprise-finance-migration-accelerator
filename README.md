@@ -344,7 +344,8 @@ enterprise-finance-migration-accelerator/
 |   ├── config.env.template                 # Configuration template
 │   ├── generate_snowflake_data.py          # Creates sample finance data
 │   ├── rbac_sync_automation.py             # Automates permission mapping
-│   └── requirements_rbac.txt               # RBAC Python dependencies
+│   ├── requirements_rbac.txt               # RBAC Python dependencies
+|   └── test_rbac_setup.py                  # RBAC permission test
 ├── validation/
 │   ├── validation_queries.sql              # 8-check test suite
 │   └── validation_notebook.ipynb           # Fabric Notebook for automation
