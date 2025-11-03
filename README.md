@@ -25,7 +25,7 @@
 
 > Built for the **FabCon Global Hack 2025** - demonstrating advanced Microsoft Fabric Open Mirroring for enterprise data migration.
 
-[🎥 **Watch 2-Minute Demo**](#) | [📘 **Migration Playbook**](docs/MIGRATION_PLAYBOOK.md) | [🏗️ **Architecture Deep Dive**](docs/ARCHITECTURE.md)
+[🎥 **Watch 2-Minute Demo**](https://vimeo.com/1132955723?share=copy&fl=sv&fe=ci) | [📘 **Migration Playbook**](docs/MIGRATION_PLAYBOOK.md) | [🏗️ **Architecture Deep Dive**](docs/ARCHITECTURE.md)
 
 ---
 
