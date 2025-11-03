@@ -369,14 +369,6 @@ enterprise-finance-migration-accelerator/
 - [SQL Analytics Endpoint](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-sql-analytics-endpoint)
 - [Direct Lake Mode](https://learn.microsoft.com/en-us/power-bi/enterprise/directlake-overview)
 
-### Video Walkthrough
-**🎥 [2-Minute Demo: Zero-Downtime Enterprise Migration](#)**
-- [0:00-0:15] The $150K Snowflake problem
-- [0:15-0:50] 60-second migration proof
-- [0:50-1:25] Automated RBAC sync demonstration
-- [1:25-2:00] Validation results + TCO calculator
-- [2:00-2:20] Production-ready call-to-action
-
 ---
 
 ## Security & Compliance
