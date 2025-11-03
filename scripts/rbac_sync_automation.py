@@ -14,12 +14,19 @@ Date: October 2025
 import os
 import json
 import logging
+import csv
 from datetime import datetime
 from typing import Dict, List, Tuple
 import snowflake.connector
 import requests
 from dataclasses import dataclass
-import pandas as pd
+
+# Optional pandas import - use built-in csv if pandas not available
+try:
+    import pandas as pd
+    HAS_PANDAS = True
+except ImportError:
+    HAS_PANDAS = False
 
 # Configure logging
 logging.basicConfig(
@@ -337,16 +344,33 @@ class RBACMigrationOrchestrator:
             
             # Save exports to CSV for documentation
             for role, grants in self.results['exported_roles'].items():
-                df = pd.DataFrame([{
-                    'role': g.role,
-                    'privilege': g.privilege,
-                    'granted_on': g.granted_on,
-                    'name': g.name,
-                    'granted_by': g.granted_by
-                } for g in grants])
-                
                 filename = f"{role.lower()}_grants.csv"
-                df.to_csv(filename, index=False)
+                
+                if HAS_PANDAS:
+                    # Use pandas if available
+                    df = pd.DataFrame([{
+                        'role': g.role,
+                        'privilege': g.privilege,
+                        'granted_on': g.granted_on,
+                        'name': g.name,
+                        'granted_by': g.granted_by
+                    } for g in grants])
+                    df.to_csv(filename, index=False)
+                else:
+                    # Use built-in csv module
+                    with open(filename, 'w', newline='') as csvfile:
+                        fieldnames = ['role', 'privilege', 'granted_on', 'name', 'granted_by']
+                        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                        writer.writeheader()
+                        for g in grants:
+                            writer.writerow({
+                                'role': g.role,
+                                'privilege': g.privilege,
+                                'granted_on': g.granted_on,
+                                'name': g.name,
+                                'granted_by': g.granted_by
+                            })
+                
                 logger.info(f"📁 Saved export: {filename}")
             
             self.exporter.close()
@@ -380,15 +404,29 @@ class RBACMigrationOrchestrator:
                     logger.info(f"   Reasoning: {permission.reasoning}")
             
             # Save mapping summary
-            df = pd.DataFrame([{
-                'snowflake_role': p.snowflake_role,
-                'fabric_role': p.role,
-                'user_email': p.email,
-                'grant_count': p.grant_count,
-                'reasoning': p.reasoning
-            } for p in self.results['mapped_permissions']])
+            if HAS_PANDAS:
+                df = pd.DataFrame([{
+                    'snowflake_role': p.snowflake_role,
+                    'fabric_role': p.role,
+                    'user_email': p.email,
+                    'grant_count': p.grant_count,
+                    'reasoning': p.reasoning
+                } for p in self.results['mapped_permissions']])
+                df.to_csv('snowflake_fabric_role_mapping.csv', index=False)
+            else:
+                with open('snowflake_fabric_role_mapping.csv', 'w', newline='') as csvfile:
+                    fieldnames = ['snowflake_role', 'fabric_role', 'user_email', 'grant_count', 'reasoning']
+                    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                    writer.writeheader()
+                    for p in self.results['mapped_permissions']:
+                        writer.writerow({
+                            'snowflake_role': p.snowflake_role,
+                            'fabric_role': p.role,
+                            'user_email': p.email,
+                            'grant_count': p.grant_count,
+                            'reasoning': p.reasoning
+                        })
             
-            df.to_csv('snowflake_fabric_role_mapping.csv', index=False)
             logger.info("\n📁 Saved mapping: snowflake_fabric_role_mapping.csv")
             
             return True
@@ -494,6 +532,14 @@ class RBACMigrationOrchestrator:
 
 def main():
     """Main execution function"""
+    
+    # Load environment variables from .env file
+    from dotenv import load_dotenv
+    load_dotenv()
+    
+    # Log pandas availability
+    if not HAS_PANDAS:
+        logger.warning("⚠️  pandas not installed - using built-in csv module for exports")
     
     # Configuration
     # IMPORTANT: In production, use Azure Key Vault or environment variables
